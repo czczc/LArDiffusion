@@ -6,7 +6,7 @@ Vue.filter('trunc', function (value, precision) {
 var vm = new Vue({
     el: '#app',
     data: {
-        E: 500.0,
+        E: 0.5,
         T: 89.0,
         T0: 89.0,
         T1: 87.0,
