@@ -18,12 +18,42 @@
 
         <div class="page-header">
           <h1>
-            Electron Diffusion in Liquid Argon
+            Calculator for Liquid Argon Properties
           </h1>
         </div>
 
         <div id="app">
-            <h2>Global fit on electron mobility in LAr</h2>
+            <div class="row input">
+                <div class="col-md-1 ">
+                    <strong>Input:</strong>
+                </div>
+                <div class="col-md-11">
+                    E (kV/cm) <input v-model="E"> &nbsp;
+                    T (K) <input v-model="T"> &nbsp;
+                </div>
+            </div>
+
+
+            <table class="table">
+              <tr>
+                <th>property</th><th>value</th>
+              </tr>
+                <td><a href="#mu">electron mobility $\mu$ (cm$^2$V$^{-1}$s$^{-1}$)</a></td>
+                <td>{{ mu | trunc }}</td>
+              </tr>
+              </tr>
+                <td>effective longitudinal electron energy $\epsilon_L$ (eV) </td>
+                <td>{{ eps_L | trunc }}</td>
+              </tr>
+              </tr>
+                <td>Longitudinal diffusion coefficients $D_L$ (cm$^2$/s)</td>
+                <td>{{ D_L | trunc }}</td>
+              </tr>
+            </table>
+
+            <hr>
+
+            <a name="mu"></a><h2>Electron mobility in LAr</h2>
             <div class="span12">
                 The electron mobility data set used in our global data fit are from Ref. [29, 45–58]. LAr temperature
                 used in this global fit is 89 K. The data reported in the references are all scaled to this temperature with
@@ -41,18 +71,9 @@
                     a_5 = 0.2053,
                 \]
             </div>
-            <div class="row calculator">
-                <div class="col-md-1 ">
-                    <strong>Calculator:</strong>
-                </div>
-                <div class="col-md-11">
-                    E (kV/cm) <input v-model="E"> &nbsp;
-                    T (K) <input v-model="T"> &nbsp;
-                    <strong>$\mu$ (cm$^2$/V/s) = {{ mu | trunc }}</strong>
-                </div>
-            </div>
 
-            <h2>Parameterization on effective longitudinal electron energy</h2>
+
+            <h2>Effective longitudinal electron energy</h2>
             <div class="span12">
                 We also introduce a parameterization of the effective electron energy for the convenience of application. Both of our data and ICARUS's data at low field are included. The parameterization is also in a form of rational polynomial
                 \[
@@ -69,16 +90,7 @@
                     b_3 = 31678.2, \quad
                 \]
             </div>
-            <div class="row calculator">
-                <div class="col-md-1 ">
-                    <strong>Calculator:</strong>
-                </div>
-                <div class="col-md-11">
-                    E (kV/cm) <input v-model="E"> &nbsp;
-                    T (K) <input v-model="T"> &nbsp;
-                    <strong>$\epsilon_L$ (eV) = {{ eps_L | trunc }}</strong>
-                </div>
-            </div>
+
 
             <h2>Longitudinal diffusion coefficients</h2>
             <div class="span12">
@@ -89,16 +101,7 @@
                 \]
                 with the parameters given previously.
             </div>
-            <div class="row calculator">
-                <div class="col-md-1 ">
-                    <strong>Calculator:</strong>
-                </div>
-                <div class="col-md-11">
-                    E (kV/cm) <input v-model="E"> &nbsp;
-                    T (K) <input v-model="T"> &nbsp;
-                    <strong>$D_L$ (cm$^2$/s) = {{ D_L | trunc }}</strong>
-                </div>
-            </div>
+
          </div>
 
     </div>

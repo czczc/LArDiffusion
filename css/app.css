@@ -1,7 +1,6 @@
 body {
     margin-bottom: 20px;
 }
-.calculator {
-    border: 1px solid red;
-    padding: 10px 5px 10px 5px;
+.input {
+    padding: 10px 10px 10px 10px;
 }
