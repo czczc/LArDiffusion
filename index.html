@@ -1,112 +1,149 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Electron Diffusion in Liquid Argon</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" />
-    <link rel="stylesheet" href="css/app.css" media="screen" />
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-    </script>
-    <script type="text/javascript" async
-      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>Electron Diffusion in Liquid Argon</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" />
+  <link rel="stylesheet" href="css/app.css" media="screen" />
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
 
-  <body>
-    <div class="container">
+<body>
+  <div class="container">
 
-        <div class="page-header">
-          <h1>
-            Calculator for Liquid Argon Properties
-          </h1>
+    <div class="page-header">
+      <h1>
+        Calculator for Liquid Argon Properties
+      </h1>
+    </div>
+
+    <div id="app">
+      <div class="row input">
+        <div class="col-md-1 ">
+          <strong>Input:</strong>
         </div>
-
-        <div id="app">
-            <div class="row input">
-                <div class="col-md-1 ">
-                    <strong>Input:</strong>
-                </div>
-                <div class="col-md-11">
-                    E (kV/cm) <input v-model="E"> &nbsp;
-                    T (K) <input v-model="T"> &nbsp;
-                </div>
-            </div>
+        <div class="col-md-11">
+          E (kV/cm) <input v-model="E"> &nbsp;
+          T (K) <input v-model="T"> &nbsp;
+        </div>
+      </div>
 
 
-            <table class="table">
-              <tr>
-                <th>property</th><th>value</th>
-              </tr>
-                <td><a href="#mu">electron mobility $\mu$ (cm$^2$V$^{-1}$s$^{-1}$)</a></td>
-                <td>{{ mu | trunc }}</td>
-              </tr>
-              </tr>
-                <td>effective longitudinal electron energy $\epsilon_L$ (eV) </td>
-                <td>{{ eps_L | trunc }}</td>
-              </tr>
-              </tr>
-                <td>Longitudinal diffusion coefficients $D_L$ (cm$^2$/s)</td>
-                <td>{{ D_L | trunc }}</td>
-              </tr>
-            </table>
+      <table class="table">
+        <tr>
+          <th>property</th><th>value</th>
+        </tr>
+        <tr>
+          <td><a href="#mu">electron mobility</a> $\mu$ (cm$^2$V$^{-1}$s$^{-1}$)</td>
+          <td>{{ mu | trunc }}</td>
+        </tr>
+        <tr>
+          <td><a href="#v">electron drift velocity</a> $v$ (cm/$\mu$s)</td>
+          <td>{{ v | trunc }}</td>
+        </tr>
+        <tr>
+          <td><a href="#eps_L">effective longitudinal electron energy</a> $\epsilon_L$ (eV) </td>
+          <td>{{ eps_L | trunc }}</td>
+        </tr>
+        <tr>
+          <td><a href="#D_L">longitudinal diffusion coefficients</a> $D_L$ (cm$^2$/s)</td>
+          <td>{{ D_L | trunc }}</td>
+        </tr>
+      </table>
 
-            <hr>
+      <hr>
 
-            <a name="mu"></a><h2>Electron mobility in LAr</h2>
-            <div class="span12">
-                The electron mobility data set used in our global data fit are from Ref. [29, 45–58]. LAr temperature
-                used in this global fit is 89 K. The data reported in the references are all scaled to this temperature with
-                the temperature dependence of $T^{−3/2}$ [59]. The fitting function is a rational polynomial expressed as:
-                \[
-                    \mu=\frac{a_0+a_1E+a_2E^{3/2}+a_3E^{5/2}}{1+(a_1/a_0)E+a_4E^2+a_5E^3}\left(\frac{T}{T_0}\right)^{-3/2},
-                \]
-                where $E$ is the electric field  in the unit of kV/cm and $a_0 = 551.6$cm$^2$/s is the electron mobility at zero field with temperature of $T_0$ = 89 K, $T$ is the LAr temperature. The fitting parameters are given bys
-                \[
-                    a_0 = 551.6, \quad
-                    a_1 = 7953.7, \quad
-                    a_2 = 4440.43, \quad
-                    a_3 = 4.29, \quad
-                    a_4 = 43.63, \quad
-                    a_5 = 0.2053,
-                \]
-            </div>
+      <h2>References</h2>
+      <div class="row">
+        <div class="col-md-12">
+          <a name="ref1">[1]</a> Y. Li, et al., "Measurement of Longitudinal Electron Diffusion in Liquid Argon", <a href="http://arxiv.org/abs/1508.07059">arXiv:1508.07059</a>.
+        </div>
+      </div>
+
+      <a name="mu"></a><h2>Electron mobility in LAr</h2>
+      <div class="row">
+        <div class="col-md-8">
+          The electron mobility data set used in our global data fit are from Ref. [29, 45–58] in Ref. <a href="#ref1">[1]</a>. LAr temperature
+          used in this global fit is 89 K. The data reported in the references are all scaled to this temperature with
+          the temperature dependence of $T^{−3/2}$ (Ref. [59] in Ref. <a href="#ref1">[1]</a>). The fitting function is a rational polynomial expressed as:
+          \[
+          \mu=\frac{a_0+a_1E+a_2E^{3/2}+a_3E^{5/2}}{1+(a_1/a_0)E+a_4E^2+a_5E^3}\left(\frac{T}{T_0}\right)^{-3/2},
+          \]
+          where $E$ is the electric field  in the unit of kV/cm and $a_0 = 551.6$cm$^2$/s is the electron mobility at zero field with temperature of $T_0$ = 89 K, $T$ is the LAr temperature. The fitting parameters are given bys
+          \[
+          a_0 = 551.6, \quad
+          a_1 = 7953.7, \quad
+          a_2 = 4440.43, \quad
+          a_3 = 4.29, \quad
+          a_4 = 43.63, \quad
+          a_5 = 0.2053,
+          \]
+        </div>
+        <div class="col-md-4">
+          <img src="img/lar_mob.gif" alt="" width="300">
+        </div>
+      </div>
+
+      <a name="v"></a><h2>Electron drift velocity in LAr</h2>
+      <div class="row">
+        <div class="col-md-12">
+          Electron drift velocity is a product of electron mobility and the electric field.
+          \[
+            v = \mu E
+          \]
+        </div>
+      </div>
+
+      <a name="eps_L"></a><h2>Effective longitudinal electron energy</h2>
+      <div class="row">
+        <div class="col-md-12">
+          We introduce a parameterization of the effective electron energy for the convenience of application. Both the data in Ref. <a href="#ref1">[1]</a> and ICARUS's data at low field are included. The parameterization is also in a form of rational polynomial
+          \[
+          \epsilon_L=\frac{b_0+b_1E+b_2E^2}{1+(b_1/b_0)E+b_3E^2}\left(\frac{T}{T_1}\right)
+          \]
+          where $E$ is the electric field in the unit of kV/cm and $b_0=0.0075$ eV is the electron energy
+          at $T_1$ = 87 K under zero field and $T$ is the LAr temperature. The parameterization can be applied to other
+          temperatures with a linear temperature dependence of $T$.
+          The fitting parameters are given bys
+          \[
+          b_0 = 0.0075, \quad
+          b_1 = 742.9, \quad
+          b_2 = 3269.6, \quad
+          b_3 = 31678.2, \quad
+          \]
+        </div>
+<!--         <div class="col-md-4">
+          <img src="img/gar_el.gif" alt="" width="300">
+        </div> -->
+      </div>
 
 
-            <h2>Effective longitudinal electron energy</h2>
-            <div class="span12">
-                We also introduce a parameterization of the effective electron energy for the convenience of application. Both of our data and ICARUS's data at low field are included. The parameterization is also in a form of rational polynomial
-                \[
-                    \epsilon_L=\frac{b_0+b_1E+b_2E^2}{1+(b_1/b_0)E+b_3E^2}\left(\frac{T}{T_1}\right)
-                \]
-                where $E$ is the electric field in the unit of kV/cm and $b_0=0.0075$ eV is the electron energy
-                at $T_1$ = 87 K under zero field and $T$ is the LAr temperature. The parameterization can be applied to other
-                temperatures with a linear temperature dependence of $T$.
-                The fitting parameters are given bys
-                \[
-                    b_0 = 0.0075, \quad
-                    b_1 = 742.9, \quad
-                    b_2 = 3269.6, \quad
-                    b_3 = 31678.2, \quad
-                \]
-            </div>
+
+      <a name="D_L"></a><h2>Longitudinal diffusion coefficients</h2>
+      <div class="row">
+        <div class="col-md-12">
+          The longitudinal diffusion coefficients $D_L$ in the range of 0.1 to 1.5 kV/cm can be expressed as
+          defined by the Einstein relation
+          \[
+          D_L=\frac{\mu\epsilon_L}{e}=\left(\frac{a_0+a_1E+a_2E^{3/2}+a_3E^{5/2}}{1+(a_1/a_0)E+a_4E^2+a_5E^3}\right)\left(\frac{b_0+b_1E+b_2E^2}{1+(b_1/b_0)E+b_3E^2}\right)\left(\frac{T}{T_0}\right)^{-3/2}\left(\frac{T}{T_1}\right),
+          \]
+          with the parameters given previously.
+        </div>
+      </div>
 
 
-            <h2>Longitudinal diffusion coefficients</h2>
-            <div class="span12">
-                The longitudinal diffusion coefficients $D_L$ in the range of 0.1 to 1.5 kV/cm can be expressed as
-                defined by the Einstein relation
-                \[
-                    D_L=\frac{\mu\epsilon_L}{e}=\left(\frac{a_0+a_1E+a_2E^{3/2}+a_3E^{5/2}}{1+(a_1/a_0)E+a_4E^2+a_5E^3}\right)\left(\frac{b_0+b_1E+b_2E^2}{1+(b_1/b_0)E+b_3E^2}\right)\left(\frac{T}{T_0}\right)^{-3/2}\left(\frac{T}{T_1}\right),
-                \]
-                with the parameters given previously.
-            </div>
 
-         </div>
 
     </div>
 
-    <script src="js/vue.min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-  </body>
+  </div>
+
+  <script src="js/vue.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
 </html>
