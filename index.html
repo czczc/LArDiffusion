@@ -137,23 +137,317 @@
       </div>
 
 
-      <a name="D_L"></a><h2>coefficients</h2>
-      <div class="row">
-        <div class="col-md-12">
-          The longitudinal diffusion coefficients $D_L$ in the range of 0.1 to 1.5 kV/cm can be expressed as
-          defined by the Einstein relation
-          \[
-          D_L=\frac{\mu\epsilon_L}{e}=\left(\frac{a_0+a_1E+a_2E^{3/2}+a_3E^{5/2}}{1+(a_1/a_0)E+a_4E^2+a_5E^3}\right)\left(\frac{b_0+b_1E+b_2E^2}{1+(b_1/b_0)E+b_3E^2}\right)\left(\frac{T}{T_0}\right)^{-3/2}\left(\frac{T}{T_1}\right),
-          \]
-          with the parameters given previously.
-        </div>
-      </div>
+     <a name="Property"></a><h2>LAr properties table</h2>
+     <div class="row">
+     <div class="col-md-12">
+    All values are on the liquid-vapor saturation line and at E=500 V/cm unless otherwsie indcated.
+    <table class="table table-bordered">
+    <thead>
+    <tr>
+    <th>Quantity</th>
+    <th>Symbol</th>
+    <th>Value</th>
+    <th>Unit</th>
+    </tr>
+    <tr>
+    <th>Automic Number</th>
+    <th>$Z$</th>
+    <th>18</th>
+    <th>-</th>
+    </tr>
+    <tr>
+    <th>Automic Weight</th>
+    <th>$A$</th>
+    <th>39.948(1)</th>
+    <th>g/mol</th>
+    </tr>
+    <tr>
+    <th>Isotopic composition</th>
+    <td colspan="3">$A$=36,38,40 stable, 39, 43 t$_{1/2}$>1 yr</td>
+    </tr>
+    <tr>
+    <td colspan="4"></td>
+    </tr>
+    <tr>
+    <th colspan="4">Thermodynamic Properties</th>
+    </tr>
+    <tr>
+    <th>Normal boiling point</th>
+    <th>$T_\text{NBP}$</th>
+    <th>87.303(2)</th>
+    <th>K</th>
+    </tr>
+    <tr>
+    <th>Density</th>
+    <th>$\rho_\text{NBP}$</th>
+    <th>1.396(1)</th>
+    <th>g/ml</th>
+    </tr>
+    <tr>
+    <th>Vapor/Liquid volume ratio</th>
+    <th>$V(g)/V(l)$</th>
+    <th>241.7</th>
+    <th>-</th>
+    </tr>
+    <tr>
+    <th>Normal freezing point</th>
+    <th>$T_\text{NFP}$</th>
+    <th>83.8(3)</th>
+    <th>K</th>
+    </tr>
+    <tr>
+    <th>Temperature at triple point</th>
+    <th>$T_\text{Triple}$</th>
+    <th>83.8058</th>
+    <th>K</th>
+    </tr>
+    <tr>
+    <th>Pressure at triple point</th>
+    <th>$P_\text{triple}$</th>
+    <th>0.68891(2)</th>
+    <th>bar</th>
+    </tr>
+    <tr>
+    <th>Density at triple point</th>
+    <th>$\rho_\text{Triple}$</th>
+    <th>1.417</th>
+    <th>g/cm$^3$</th>
+    </tr>
+    <tr>
+    <th>Temperature at critical point</th>
+    <th>$T_\text{C}$</th>
+    <th>150.687(15)</th>
+    <th>K</th>
+    </tr>
+    <tr>
+    <th>Pressure at critical point</th>
+    <th>$P_\text{C}$</th>
+    <th>48.63(3)</th>
+    <th>bar</th>
+    </tr>
+    <tr>
+    <th>Density at critical point</th>
+    <th>$\rho_\text{C}$</th>
+    <th>0.5356(10)</th>
+    <th>g/cm$^3$</th>
+    </tr>
+    <tr>
+    <th>Heat of vaporization</th>
+    <th>$\Delta H_\text{vap}$</th>
+    <th>161.14</th>
+    <th>kJ/kg</th>
+    </tr>
+    <tr>
+    <th>Heat capacity</th>
+    <th>$C_\text{p}$</th>
+    <th>1.117</th>
+    <th>kJ/kg/K</th>
+    </tr>
+    <tr>
+    <th>Thermal conductivity</th>
+    <th>$\rho_\text{NBP}$</th>
+    <th>0.1256</th>
+    <th>W/m/K</th>
+    </tr>
+    <tr>
+    <th>Viscosity</th>
+    <th>$\eta$</th>
+    <th>270.7</th>
+    <th>$\mu$Pas$\cdot$s</th>
+    </tr>
+    <tr>
+    <th>Speed of sound</th>
+    <th>$v_\text{s}$</th>
+    <th>838.3(1)</th>
+    <th>m/s</th>
+    </tr>
+    
+    <tr>
+    <td colspan="4"></td>
+    </tr>
+    <tr>
+    <th colspan="4">Response to electromagnetic radiation</th>
+    </tr>
+    <tr>
+    <th>Delectric constant</th>
+    <th>$\epsilon$</th>
+    <th>1.505(3)</th>
+    <th>-</th>
+    </tr>
+    <tr>
+    <th>Index of refraction (at 128 nm)</th>
+    <th>$n$</th>
+    <th>1.38</th>
+    <th>-</th>
+    </tr>
+    <tr>
+    <th>Rayleigh scattering length (at 128 nm)</th>
+    <th>$L_\text{R}$</th>
+    <th>95</th>
+    <th>cm</th>
+    </tr>
+    <tr>
+    <th>Absorption length (> 128 nm)</th>
+    <th>$L_\text{A}$</th>
+    <th>>200</th>
+    <th>cm</th>
+    </tr>
 
+    <tr>
+    <td colspan="4"></td>
+    </tr>
+    <tr>
+    <th colspan="4">Response to ionization radiation</th>
+    </tr>  
+    <tr>
+    <th>W-value for ionization</th>
+    <th>$W_\text{i}$</th>
+    <th>23.6(3)</th>
+    <th>eV/pair</th>
+    </tr>
+    <tr>
+    <th>W-value for scintillation</th>
+    <th>$W_\text{s}$</th>
+    <th>19.5</th>
+    <th>eV/photon</th>
+    </tr>
+    <tr>
+    <th>W-value for Cerenkov radiation</th>
+    <th>$W_\text{c}$</th>
+    <th>2700</th>
+    <th>eV/photon</th>
+    </tr>
+    <tr>
+    <th>Fano factor</th>
+    <th>$F$</th>
+    <th>0.107</th>
+    <th>-</th>
+    </tr>
+    <tr>
+    <th>Moliere radius</th>
+    <th>$R_\text{M}$</th>
+    <th>10.0</th>
+    <th>cm</th>
+    </tr>
+    <tr>
+    <th>Radiation length</th>
+    <th>$X_0$</th>
+    <th>14.0</th>
+    <th>cm</th>
+    </tr>
+    <tr>
+    <th>Nuclear interaction length</th>
+    <th>$\lambda_\text{i}$</th>
+    <th>85.7</th>
+    <th>cm</th>
+    </tr>
+    <tr>
+    <th>Critical energy</th>
+    <th>$E_\text{c}$</th>
+    <th>30.5</th>
+    <th>MeV</th>
+    </tr>
+    <tr>
+    <th>Mininum specific energy loss</th>
+    <th>$dE_\text{MIP}/dx$</th>
+    <th>2.12</th>
+    <th>MeV/cm</th>
+    </tr>
+    <tr>
+    <th>Scintillation emission peak</th>
+    <th>$\lambda_\text{scint}$</th>
+    <th>128(10)</th>
+    <th>nm</th>
+    </tr>
+    <tr>
+    <th>Decay time</th>
+    <th>$\tau_\text{scint}$</th>
+    <th>6(2), 1590(100)</th>
+    <th>ns</th>
+    </tr>
 
+    <tr>
+    <td colspan="4"></td>
+    </tr>
+    <tr>
+    <th colspan="6">Isotopic composition and radiological purity</th>
+    </tr>  
+    <tr>
+    <th>Isotope</th>
+    <th>Relative Mass</th>
+    <th>Abundance</th>
+    <th>Decay Mode</th>
+    <th>Half Life</th>
+    <th>Q-value(MeV)</th>
+    </tr>
+    <tr>
+    <th>36</th>
+    <th>35.96754628(27)</th>
+    <th>0.337(3)</th>
+    <th>stable</th>
+    <th>-</th>
+    <th>-</th>
+    </tr>
+    <tr>
+    <th>37</th>
+    <th></th>
+    <th>nil</th>
+    <th>EC,$\beta^+$</th>
+    <th>35.04d</th>
+    <th>0.8135(3)</th>
+    </tr>
+    <tr>
+    <th>38</th>
+    <th>37.9627322(5)</th>
+    <th>0.063(1)</th>
+    <th>stable</th>
+    <th>-</th>
+    <th>-</th>
+    </tr>
+     <tr>
+    <th>39</th>
+    <th></th>
+    <th>1.01(8)Bq/kg</th>
+    <th>$\beta^-$</th>
+    <th>269y</th>
+    <th>0.565(5)</th>
+    </tr>
+    <tr>
+    <th>40</th>
+    <th>39.962383123(3)</th>
+    <th>99.600(3)</th>
+    <th>stable</th>
+    <th>-</th>
+    <th>-</th>
+    </tr>
+    <tr>
+    <th>41</th>
+    <th></th>
+    <th>nil</th>
+    <th>$\beta^-$</th>
+    <th>109.34m</th>
+    <th>2.4916(7)</th>
+    </tr>
+    <tr>
+    <th>42</th>
+    <th></th>
+    <th>6$\times10^{-5}$ Bq/kg</th>
+    <th>$\beta^-$</th>
+    <th>32.9y</th>
+    <th>0.599(40)</th>
+    </tr>
+ 
 
+    </table>
     </div>
 
   </div>
+    <div class="col-md-4">
+    <h1>LAr Phase Diagram</h1>
+    Attempt to add plot in.
+
+          <img src="img/lar_phase.gif" alt="" width="300">
+        </div>
 
   <script src="js/vue.min.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
