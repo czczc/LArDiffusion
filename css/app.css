@@ -4,3 +4,21 @@ body {
 .input {
     padding: 10px 10px 10px 10px;
 }
+
+table caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+td.caption {
+    color: #555;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+caption.small {
+    color: #111;
+    font-size: 0.7em;
+    font-weight: normal;
+}
