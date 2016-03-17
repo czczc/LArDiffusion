@@ -33,60 +33,6 @@ var vm = new Vue({
         },
         v: function() {
             return this.mu * this.E /1000; // cm / us
-            // // if(this.E > 4.0) {
-            // //     return "E-field too high";
-            // // }
-            // // if(this.T < 87.0 || this.T > 94.0) {
-            // //     return "T out of range";
-            // // }
-            // var tshift = -87.203+this.T;
-            // var xFit = 0.0938163-0.0052563*tshift-0.0001470*tshift*tshift;
-            // var uFit = 5.18406+0.01448*tshift-0.003497*tshift*tshift-0.000516*tshift*tshift*tshift;
-            // var vd;
-
-            // // Icarus Parameter Set, use as default
-            // var  P1 = -0.04640; // K^-1
-            // var  P2 = 0.01712;  // K^-1
-            // var  P3 = 1.88125;  // (kV/cm)^-1
-            // var  P4 =  0.99408; // kV/cm
-            // var  P5 =  0.01172; // (kV/cm)^-P6
-            // var  P6 =  4.20214;
-            // var  T0 =  105.749; // K
-            // // Walkowiak Parameter Set
-            // var  P1W = -0.01481;
-            // var  P2W = -0.0075;
-            // var  P3W =  0.141;
-            // var  P4W =  12.4;
-            // var  P5W =  1.627;
-            // var  P6W =  0.317;
-            // var  T0W =  90.371;
-
-            // // From Craig Thorne . . . currently not documented
-            // // smooth transition from linear at small fields to
-            // // icarus fit at most fields to Walkowiak at very high fields
-            // if (this.E < xFit) { vd=this.E*uFit; }
-            // else if (this.E<0.619) {
-            //     vd = ((P1*(this.T-T0)+1)
-            //            *(P3*this.E*Math.log(1+P4/this.E) + P5*Math.pow(this.E,P6))
-            //            +P2*(this.T-T0));
-            // }
-            // else if (this.E<0.699) {
-            //     vd = 12.5*(this.E-0.619)*((P1W*(this.T-T0W)+1)
-            //            *(P3W*this.E*Math.log(1+P4W/this.E) + P5W*Math.pow(this.E,P6W))
-            //            +P2W*(this.T-T0W))+
-            //          12.5*(0.699-this.E)*((P1*(this.T-T0)+1)
-            //            *(P3*this.E*Math.log(1+P4/this.E) + P5*Math.pow(this.E,P6))
-            //            +P2*(this.T-T0));
-            //    }
-            // else {
-            //     vd = ((P1W*(this.T-T0W)+1)
-            //            *(P3W*this.E*Math.log(1+P4W/this.E) + P5W*Math.pow(this.E,P6W))
-            //            +P2W*(this.T-T0W));
-            // }
-
-            // vd /= 10.;
-
-            // return vd; // in cm/us
         }
     }
 });

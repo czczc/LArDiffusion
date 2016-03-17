@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Everything You Need to Know About Liquid Argon</title>
+  <title>Everything You Need to Know About Liquid Argon Properties</title>
   <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" />
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
@@ -19,7 +19,7 @@
   <div class="container">
     <div class="page-header">
       <h1>
-        Everything You Need to Know About Liquid Argon
+        Everything You Need to Know About Liquid Argon Properties
       </h1>
     </div>
   </div>
@@ -344,13 +344,19 @@
             </tbody>
           </table>
 
-          <a name="phase-diagram"></a><h3>LAr Phase Diagram</h3>
-          <div class="row">
-            <div class="col-md-8">
-              Text to be added...
+          <div class="panel panel-primary">
+            <div class="panel-heading"><a name="phase-diagram"></a>
+              <h3 class="panel-title">LAr Phase Diagram</h3>
             </div>
-            <div class="col-md-4">
-              <img src="img/lar_phase.gif" alt="" width="300">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-8">
+                  Text to be added...
+                </div>
+                <div class="col-md-4">
+                  <img src="img/lar_phase.gif" alt="" width="250">
+                </div>
+              </div>
             </div>
           </div>
 
@@ -361,12 +367,22 @@
         <section><a name="e-trans"></a>
           <h2>Electron Transportation</h2>
           <div class="row input">
-            <div class="col-md-1 ">
-              <strong>Input:</strong>
+            <div class="col-md-2 ">
+              <label for="">Please Enter:</label>
             </div>
-            <div class="col-md-11">
-              E (kV/cm) <input v-model="E"> &nbsp;
-              T (K) <input v-model="T"> &nbsp;
+            <div class="col-md-5">
+              <div class="input-group">
+                <span class="input-group-addon">E field</span>
+                <input type="text" class="form-control" v-model="E">
+                <span class="input-group-addon">kV/cm</span>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="input-group">
+                <span class="input-group-addon">Temperature</span>
+                <input type="text" class="form-control" v-model="T">
+                <span class="input-group-addon">K</span>
+              </div>
             </div>
           </div>
           <table class="table table-bordered table-striped">
@@ -408,33 +424,42 @@
             </tbody>
           </table>
 
-          <a name="mu"></a><h3>Electron mobility in LAr</h3>
-          <div class="row">
-            <div class="col-md-8">
-              The electron mobility data set used in our global data fit are from Ref. [29, 45–58] in Ref. <a href="#ref1">[1]</a>. LAr temperature
-              used in this global fit is 89 K. The data reported in the references are all scaled to this temperature with
-              the temperature dependence of $T^{−3/2}$ (Ref. [59] in Ref. <a href="#ref1">[1]</a>). The fitting function is a rational polynomial expressed as:
-              \[
-              \mu=\frac{a_0+a_1E+a_2E^{3/2}+a_3E^{5/2}}{1+(a_1/a_0)E+a_4E^2+a_5E^3}\left(\frac{T}{T_0}\right)^{-3/2},
-              \]
-              where $E$ is the electric field  in the unit of kV/cm and $a_0 = 551.6$cm$^2$/s is the electron mobility at zero field with temperature of $T_0$ = 89 K, $T$ is the LAr temperature. The fitting parameters are given bys
-              \[
-              a_0 = 551.6, \quad
-              a_1 = 7953.7, \quad
-              a_2 = 4440.43, \quad
-              a_3 = 4.29, \quad
-              a_4 = 43.63, \quad
-              a_5 = 0.2053,
-              \]
+
+          <div class="panel panel-primary">
+            <div class="panel-heading"><a name="mu"></a>
+              <h3 class="panel-title">Electron mobility in LAr</h3>
             </div>
-            <div class="col-md-4">
-              <img src="img/lar_mob_data.gif" alt="" width="300">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-8">
+                  The electron mobility data set used in our global data fit are from Ref. [29, 45–58] in Ref. <a href="#ref1">[1]</a>. LAr temperature
+                  used in this global fit is 89 K. The data reported in the references are all scaled to this temperature with
+                  the temperature dependence of $T^{−3/2}$ (Ref. [59] in Ref. <a href="#ref1">[1]</a>). The fitting function is a rational polynomial expressed as:
+                  \[
+                  \mu=\frac{a_0+a_1E+a_2E^{3/2}+a_3E^{5/2}}{1+(a_1/a_0)E+a_4E^2+a_5E^3}\left(\frac{T}{T_0}\right)^{-3/2},
+                  \]
+                  where $E$ is the electric field  in the unit of kV/cm and $a_0 = 551.6$cm$^2$/s is the electron mobility at zero field with temperature of $T_0$ = 89 K, $T$ is the LAr temperature. The fitting parameters are given bys
+                  \[
+                  a_0 = 551.6, \quad
+                  a_1 = 7953.7, \quad
+                  a_2 = 4440.43, \quad
+                  a_3 = 4.29, \quad
+                  a_4 = 43.63, \quad
+                  a_5 = 0.2053
+                  \]
+                </div>
+                <div class="col-md-4">
+                  <img src="img/lar_mob_data.gif" alt="" width="250">
+                </div>
+              </div>
             </div>
           </div>
 
-          <a name="v"></a><h3>Electron drift velocity in LAr</h3>
-          <div class="row">
-            <div class="col-md-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading"><a name="v"></a>
+              <h3 class="panel-title">Electron drift velocity in LAr</h3>
+            </div>
+            <div class="panel-body">
               Electron drift velocity is a product of electron mobility and the electric field.
               \[
                 v = \mu E
@@ -442,32 +467,40 @@
             </div>
           </div>
 
-          <a name="eps_L"></a><h3>Effective longitudinal electron energy</h3>
-          <div class="row">
-            <div class="col-md-8">
-              We introduce a parameterization of the effective electron energy for the convenience of application. Both the data in Ref. <a href="#ref1">[1]</a> and ICARUS's data at low field are included. The parameterization is also in a form of rational polynomial
-              \[
-              \epsilon_L=\frac{b_0+b_1E+b_2E^2}{1+(b_1/b_0)E+b_3E^2}\left(\frac{T}{T_1}\right)
-              \]
-              where $E$ is the electric field in the unit of kV/cm and $b_0=0.0075$ eV is the electron energy
-              at $T_1$ = 87 K under zero field and $T$ is the LAr temperature. The parameterization can be applied to other
-              temperatures with a linear temperature dependence of $T$.
-              The fitting parameters are given bys
-              \[
-              b_0 = 0.0075, \quad
-              b_1 = 742.9, \quad
-              b_2 = 3269.6, \quad
-              b_3 = 31678.2, \quad
-              \]
+          <div class="panel panel-primary">
+            <div class="panel-heading"><a name="eps_L"></a>
+              <h3 class="panel-title">Effective longitudinal electron energy</h3>
             </div>
-            <div class="col-md-4">
-              <img src="img/lar_el_data.gif" alt="" width="300">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-8">
+                  We introduce a parameterization of the effective electron energy for the convenience of application. Both the data in Ref. <a href="#ref1">[1]</a> and ICARUS's data at low field are included. The parameterization is also in a form of rational polynomial
+                  \[
+                  \epsilon_L=\frac{b_0+b_1E+b_2E^2}{1+(b_1/b_0)E+b_3E^2}\left(\frac{T}{T_1}\right)
+                  \]
+                  where $E$ is the electric field in the unit of kV/cm and $b_0=0.0075$ eV is the electron energy
+                  at $T_1$ = 87 K under zero field and $T$ is the LAr temperature. The parameterization can be applied to other
+                  temperatures with a linear temperature dependence of $T$.
+                  The fitting parameters are given bys
+                  \[
+                  b_0 = 0.0075, \quad
+                  b_1 = 742.9, \quad
+                  b_2 = 3269.6, \quad
+                  b_3 = 31678.2, \quad
+                  \]
+                </div>
+                <div class="col-md-4">
+                  <img src="img/lar_el_data.gif" alt="" width="250">
+                </div>
+              </div>
             </div>
           </div>
 
-          <a name="D_L"></a><h3>Longitudinal diffusion coefficients</h3>
-          <div class="row">
-            <div class="col-md-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading"><a name="D_L"></a>
+              <h3 class="panel-title">Longitudinal diffusion coefficients</h3>
+            </div>
+            <div class="panel-body">
               The longitudinal diffusion coefficients $D_L$ in the range of 0.1 to 1.5 kV/cm can be expressed as
               defined by the Einstein relation
               \[
@@ -489,14 +522,38 @@
 
         <section><a name="cold-elec"></a>
           <h2>Cold Electronics</h2>
-          <hr>
           <div class="alert alert-info" role="alert">Editor: Brian Kirby, Jyoti Joshi</div>
+          <hr>
         </section>
 
         <section><a name="particle-pass"></a>
-          <h2>Particle Passage</h2>
-          <hr>
+          <h2>Particle Passage through LAr</h2>
+
+          <div class="panel panel-primary">
+            <div class="panel-heading">Stopping power</div>
+            <div class="panel-body">
+              <p>
+                The mean rate of energy loss by moderately relativistic charged heavy particles is well-described by the "Bethe equation" ...
+              </p>
+              <p>
+                Click the following links to retrieve the relevent plots:
+              </p>
+
+
+              <div class="list-group">
+                <a href="" class="list-group-item list-group-item-success">dE/dx vs. Kinetic Energy for proton, kaon, pion, muon</a>
+                <div id="dedx-ke" class='plot'></div>
+                <a href="" class="list-group-item list-group-item-success">dE/dx vs. Residual Range for proton, kaon, pion, muon</a>
+                <div id="dedx-residual-range" class='plot'></div>
+              </div>
+            </div>
+          </div>
+
+
+
+
           <div class="alert alert-info" role="alert">Editor: Xin Qian, Chao Zhang</div>
+          <hr>
         </section>
 
         <section><a name="scint"></a>
@@ -508,7 +565,7 @@
         <section><a name="recon"></a>
           <h2>LArTPC Reconstruction</h2>
           <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-7">
               <p>
               Event reconstruction is one of the most challenging tasks in analyzing the data from current and future large liquid argon time projection chambers (LArTPCs). The performance of the event reconstruction holds the key to many potential future discoveries with the LArTPC technology including i) searching for new CP violation in the leptonic sector, ii) determining the neutrino mass hierarchy, and iii) searching for additional light (sterile) neutrino species.
               </p>
@@ -516,8 +573,8 @@
               <strong><a href="http://www.phy.bnl.gov/wire-cell/">Wire-Cell</a></strong> is a novel tomographic event reconstruction method, which is being developed aiming to solve the long-standing problem of automated 3D neutrino event reconstruction in LArTPC. Taking the simulation results from <a href="https://cdcvs.fnal.gov/redmine/projects/larsoftsvn/wiki">LArSoft</a>, the principle of Wire-Cell strictly follows the principle of LArTPC, that is, the same amount of ionization electrons are observed by all the wire-planes. Using both time and charge information, 3D image of the event topologies are firstly obtained. Further reconstruction steps including the clustering, tracking, and particle identifications (PID) are then directly applied to the 3D image.
               </p>
             </div>
-            <div class="col-md-4">
-              <img src="img/wirecell.png" alt="" width="300">
+            <div class="col-md-5">
+              <img src="img/wirecell.png" alt="" width="320">
             </div>
           </div>
           <div class="alert alert-info" role="alert">Editor: Xin Qian</div>
@@ -527,7 +584,7 @@
         <section><a name="ev-disp"></a>
           <h2>Event Display</h2>
           <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-6">
               <p>
 
                 A novel web-based event display "<strong><a href="http://www.phy.bnl.gov/wire-cell/bee/">Bee</a></strong>" is being developed to visualize different types of LArTPC events reconstructed by Wire-Cell and other algorithms. <span class="text-success">Bee</span> uses <a href="https://en.wikipedia.org/wiki/WebGL">WebGL</a> to draw interactive 3D graphics in the browser through the <a href="http://threejs.org/">three.js</a> JavaScript library. The list of compatible browsers can be found <a href="http://caniuse.com/#feat=webgl">here</a>.
@@ -537,12 +594,11 @@
               With the <span class="text-success">Bee</span> event display, users can freely examine the details of event topology in the 3D space, compare the performance of different reconstruction results, show the true Monte-Carlo trajectories and particle types, enter the sliced mode to view the development of tomographic images, and explore many other features of the events.
               </p>
             </div>
-            <div class="col-md-4">
-              <img src="img/bee-white.png" alt="" width="300">
+            <div class="col-md-6">
+              <img src="img/bee-white.png" alt="" width="400">
             </div>
           </div>
           <div class="alert alert-info" role="alert">Editor: Chao Zhang</div>
-
           <hr>
         </section>
 
@@ -562,7 +618,11 @@
   </div>
 
   <!-- <script src="js/bootstrap.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script src="js/highcharts/highcharts.js"></script>
+  <script src="js/highcharts/modules/exporting.js"></script>
   <script src="js/vue.min.js"></script>
+  <script src="js/charts.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>

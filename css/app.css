@@ -3,6 +3,10 @@ body {
     /*font-size: 16px;*/
 }
 
+i {
+    margin-right: 10px;
+}
+
 section {
     margin-bottom: 50px;
 }
@@ -16,9 +20,12 @@ section {
 .input {
     padding: 10px;
     margin: 2px;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
+    background-color: #dff0d8;
 }
-
+.plot {
+    display: none;
+}
 
 table caption {
     font-size: 1.5em;
