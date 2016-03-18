@@ -97,7 +97,27 @@ Latex math formula can be inserted into the html directly. It is then automatica
 Interactive plots can be added as shown in [this example](http://lar.bnl.gov/properties/#particle-pass). The plots are rendered by the [Highchharts](http://lar.bnl.gov/properties/#particle-pass) library.
 
 ### Prepare data
+Suppose you want to overlay three curves with the names: data-1, data-2, data-3, respectively. Suppose you name this plot `myplot`. You should then create a text file `myplot.txt` with the following content:
+```
+# data-1 data-2 data-3
+data-1-x1 data-1-x2 data-1-x3 data-1-x4 ...
+data-1-y1 data-1-y2 data-1-y3 data-1-y4 ...
+data-2-x1 data-2-x2 data-2-x3 data-2-x4 ...
+data-2-y1 data-2-y2 data-2-y3 data-2-y4 ...
+data-3-x1 data-3-x2 data-3-x3 data-3-x4 ...
+data-3-y1 data-3-y2 data-3-y3 data-3-y4 ...
+```
+Note that data-1, data-2 and data-3 don't need to have the same number of points, but within each curve, the x and y array must have the same length.
+
+To reduce the size of the data to be transfered, one should consider use less number of points when possible. In general, ~200 data points is enough. For the same reason, one should print out less significant digits when possible.
 
 ### Convert to JSON format
+Use the [data/convert.py](data/convert.py) script to convert your `myplot.txt` file into a JSON format that (Highcharts)[http://api.highcharts.com/highcharts#series<line>.data] understands.
+```bash
+cd data/
+python convert.py path/to/myplot.txt
+```
+This will create a `myplot.json` file inside the `data/` directory.
 
 ### Load into webpage
+Finally, we need to load the data into the webpage.
