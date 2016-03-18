@@ -55,37 +55,14 @@ function create_chart(id, options) {
     });
 }
 
-var dispatcher = {
-    'dedx-ke': {
-        xAxis: {title: {text: 'Kinetic Energy [Mev]'}, type: 'logarithmic', min: 0.05, max: 10},
-        yAxis: {title: {text: 'dE/dx [Mev/cm]'}, min: 2, max: 4.5}
-    },
-    'dedx-residual-range': {
-        xAxis: {title: {text: 'Residual Range [cm]'}, min: 0, max: 100},
-        yAxis: {title: {text: 'dE/dx [Mev/cm]'}, min: 2, max: 10}
-    }
-}
-
 $('.list-group-item').click(function(e){
     e.preventDefault();
     var $el = $(this).next();
     var id = $el.attr('id');
     if (all_charts[id] == undefined) {
-        create_chart(id, dispatcher[id]);
+        create_chart(id, plot_dispatcher[id]);
     }
     $el.toggle();
     // console.log(id);
 });
-
-// create_chart('dedx-ke', {
-//     title: {text: 'dE/dx vs. Kinetic Energy'},
-//     xAxis: {title: {text: 'Kinetic Energy [Mev]'}, type: 'logarithmic', min: 0.05, max: 10},
-//     yAxis: {title: {text: 'dE/dx [Mev/cm]'}, min: 2, max: 4.5}
-// });
-
-// create_chart('dedx-residual-range', {
-//     title: {text: 'dE/dx vs. Residual Range'},
-//     xAxis: {title: {text: 'Residual Range [cm]'}, min: 0, max: 100},
-//     yAxis: {title: {text: 'dE/dx [Mev/cm]'}, min: 2, max: 10}
-// });
 
