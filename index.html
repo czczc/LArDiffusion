@@ -15,7 +15,7 @@
 </script>
 </head>
 
-<body>
+<body><a name="top"></a>
   <div class="container">
     <div class="page-header">
       <h1>
@@ -35,7 +35,7 @@
             <li><a href="#cold-elec"><i class="fa fa-code-fork fa-fw"></i> Cold Electronics</a></li>
             <li><a href="#particle-pass"><i class="fa fa-car fa-fw"></i> Particle Passage</a></li>
             <li><a href="#scint"><i class="fa fa-lightbulb-o fa-fw"></i> Scintillation</a></li>
-            <li><a href="#recon"><i class="fa fa-magic"></i> LArTPC Reconstruction</a></li>
+            <li><a href="#recon"><i class="fa fa-cogs"></i> LArTPC Reconstruction</a></li>
             <li><a href="#ev-disp"><i class="fa fa-eye"></i> Event Display</a></li>
             <li><a href="#refs"><i class="fa fa-book"></i> References</a></li>
           </ul>
@@ -50,7 +50,81 @@
              All values are on the liquid-vapor saturation line and at E=500 V/cm unless otherwsie indcated.
           </p>
 
+          <a name="Ar-comp"></a>
+          <table class="table table-bordered">
+            <caption>Isotopic composition and radiological purity</caption>
+            <thead>
+              <tr>
+                <th>Isotope</th>
+                <th>Relative Mass</th>
+                <th>Abundance</th>
+                <th>Decay Mode</th>
+                <th>Half Life</th>
+                <th>Q-value(MeV)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>$^{36}$Ar</td>
+                <td>35.96754628(27)</td>
+                <td>0.337(3)</td>
+                <td>stable</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>$^{37}$Ar</td>
+                <td></td>
+                <td>nil</td>
+                <td>EC,$\beta^+$</td>
+                <td>35.04d</td>
+                <td>0.8135(3)</td>
+              </tr>
+              <tr>
+                <td>$^{38}$Ar</td>
+                <td>37.9627322(5)</td>
+                <td>0.063(1)</td>
+                <td>stable</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>$^{39}$Ar</td>
+                <td></td>
+                <td>1.01(8)Bq/kg</td>
+                <td>$\beta^-$</td>
+                <td>269y</td>
+                <td>0.565(5)</td>
+              </tr>
+              <tr>
+                <td>$^{40}$Ar</td>
+                <td>39.962383123(3)</td>
+                <td>99.600(3)</td>
+                <td>stable</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>$^{41}$Ar</td>
+                <td></td>
+                <td>nil</td>
+                <td>$\beta^-$</td>
+                <td>109.34m</td>
+                <td>2.4916(7)</td>
+              </tr>
+              <tr>
+                <td>$^{42}$Ar</td>
+                <td></td>
+                <td>6$\times10^{-5}$ Bq/kg</td>
+                <td>$\beta^-$</td>
+                <td>32.9y</td>
+                <td>0.599(40)</td>
+              </tr>
+            </tbody>
+          </table>
+
           <table class="table table-bordered table-striped">
+            <caption>Thermodynamic properties</caption>
             <thead>
               <tr>
                 <th>Property</th>
@@ -60,26 +134,6 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Automic Number</td>
-                <td>$Z$</td>
-                <td>18</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Automic Weight</td>
-                <td>$A$</td>
-                <td>39.948(1)</td>
-                <td>g/mol</td>
-              </tr>
-              <tr>
-                <td><a href="#Ar-comp">Isotopic composition</a></td>
-                  <td colspan="3">$^{36}$Ar (0.34%), $^{38}$Ar (0.06%), $^{40}$Ar (99.6%)</td>
-              </tr>
-
-              <tr>
-                <td colspan="4"  class="caption">Thermodynamic properties</td>
-              </tr>
               <tr>
                 <td>Normal boiling point</td>
                 <td>$T_\text{NBP}$</td>
@@ -170,10 +224,20 @@
                 <td>838.3(1)</td>
                 <td>m/s</td>
               </tr>
+            </tbody>
+          </table>
 
+          <table class="table table-bordered table-striped">
+            <caption>Response to electromagnetic radiation</caption>
+            <thead>
               <tr>
-                <td colspan="4"  class="caption">Response to electromagnetic radiation</td>
+                <th>Property</th>
+                <th>Symbol</th>
+                <th>Value</th>
+                <th>Unit</th>
               </tr>
+            </thead>
+            <tbody>
               <tr>
                 <td>Delectric constant</td>
                 <td>$\epsilon$</td>
@@ -198,10 +262,20 @@
                 <td>>200</td>
                 <td>cm</td>
               </tr>
+            </tbody>
+          </table>
 
+          <table class="table table-bordered table-striped">
+            <caption>Response to ionization radiation</caption>
+            <thead>
               <tr>
-                <td colspan="4" class="caption">Response to ionization radiation</td>
+                <th>Property</th>
+                <th>Symbol</th>
+                <th>Value</th>
+                <th>Unit</th>
               </tr>
+            </thead>
+            <tbody>
               <tr>
                 <td>W-value for ionization</td>
                 <td>$W_\text{i}$</td>
@@ -271,78 +345,34 @@
             </tbody>
           </table>
 
-          <a name="Ar-comp"></a>
-          <table class="table table-bordered">
-            <caption>Isotopic composition and radiological purity</caption>
+<!--           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th>Isotope</th>
-                <th>Relative Mass</th>
-                <th>Abundance</th>
-                <th>Decay Mode</th>
-                <th>Half Life</th>
-                <th>Q-value(MeV)</th>
+                <th>Property</th>
+                <th>Symbol</th>
+                <th>Value</th>
+                <th>Unit</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>$^{36}$Ar</td>
-                <td>35.96754628(27)</td>
-                <td>0.337(3)</td>
-                <td>stable</td>
-                <td>-</td>
+                <td>Automic Number</td>
+                <td>$Z$</td>
+                <td>18</td>
                 <td>-</td>
               </tr>
               <tr>
-                <td>$^{37}$Ar</td>
-                <td></td>
-                <td>nil</td>
-                <td>EC,$\beta^+$</td>
-                <td>35.04d</td>
-                <td>0.8135(3)</td>
+                <td>Automic Weight</td>
+                <td>$A$</td>
+                <td>39.948(1)</td>
+                <td>g/mol</td>
               </tr>
               <tr>
-                <td>$^{38}$Ar</td>
-                <td>37.9627322(5)</td>
-                <td>0.063(1)</td>
-                <td>stable</td>
-                <td>-</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>$^{39}$Ar</td>
-                <td></td>
-                <td>1.01(8)Bq/kg</td>
-                <td>$\beta^-$</td>
-                <td>269y</td>
-                <td>0.565(5)</td>
-              </tr>
-              <tr>
-                <td>$^{40}$Ar</td>
-                <td>39.962383123(3)</td>
-                <td>99.600(3)</td>
-                <td>stable</td>
-                <td>-</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>$^{41}$Ar</td>
-                <td></td>
-                <td>nil</td>
-                <td>$\beta^-$</td>
-                <td>109.34m</td>
-                <td>2.4916(7)</td>
-              </tr>
-              <tr>
-                <td>$^{42}$Ar</td>
-                <td></td>
-                <td>6$\times10^{-5}$ Bq/kg</td>
-                <td>$\beta^-$</td>
-                <td>32.9y</td>
-                <td>0.599(40)</td>
+                <td><a href="#Ar-comp">Isotopic composition</a></td>
+                  <td colspan="3">$^{36}$Ar (0.34%), $^{38}$Ar (0.06%), $^{40}$Ar (99.6%)</td>
               </tr>
             </tbody>
-          </table>
+          </table> -->
 
           <div class="panel panel-primary">
             <div class="panel-heading"><a name="phase-diagram"></a>
@@ -365,7 +395,7 @@
         </section>
 
         <section><a name="e-trans"></a>
-          <h2>Electron Transportation</h2>
+          <h2>Electron Transportation <a href="#top" style="float:right"><i class="fa fa-angle-double-up fa-fw"></i></a></h2>
           <div class="row input">
             <div class="col-md-2 ">
               <label for="">Please Enter:</label>
@@ -515,20 +545,19 @@
         </section>
 
         <section><a name="ion-trans"></a>
-          <h2>Ion Transportation</h2>
+          <h2>Ion Transportation <a href="#top" style="float:right"><i class="fa fa-angle-double-up fa-fw"></i></a></h2>
           <div class="alert alert-info" role="alert">Editor: Michael Mooney</div>
           <hr>
         </section>
 
         <section><a name="cold-elec"></a>
-          <h2>Cold Electronics</h2>
+          <h2>Cold Electronics <a href="#top" style="float:right"><i class="fa fa-angle-double-up fa-fw"></i></a></h2>
           <div class="alert alert-info" role="alert">Editor: Brian Kirby, Jyoti Joshi</div>
           <hr>
         </section>
 
         <section><a name="particle-pass"></a>
-          <h2>Particle Passage through LAr</h2>
-
+          <h2>Particle Passage through LAr <a href="#top" style="float:right"><i class="fa fa-angle-double-up fa-fw"></i></a></h2>
           <div class="panel panel-primary">
             <div class="panel-heading">Stopping power</div>
             <div class="panel-body">
@@ -549,21 +578,18 @@
             </div>
           </div>
 
-
-
-
           <div class="alert alert-info" role="alert">Editor: Xin Qian, Chao Zhang</div>
           <hr>
         </section>
 
         <section><a name="scint"></a>
-          <h2>Scintillation</h2>
+          <h2>Scintillation <a href="#top" style="float:right"><i class="fa fa-angle-double-up fa-fw"></i></a></h2>
           <div class="alert alert-info" role="alert">Editor: Yichen Li</div>
           <hr>
         </section>
 
         <section><a name="recon"></a>
-          <h2>LArTPC Reconstruction</h2>
+          <h2>LArTPC Reconstruction <a href="#top" style="float:right"><i class="fa fa-angle-double-up fa-fw"></i></a></h2>
           <div class="row">
             <div class="col-md-7">
               <p>
@@ -582,7 +608,7 @@
         </section>
 
         <section><a name="ev-disp"></a>
-          <h2>Event Display</h2>
+          <h2>Event Display <a href="#top" style="float:right"><i class="fa fa-angle-double-up fa-fw"></i></a></h2>
           <div class="row">
             <div class="col-md-6">
               <p>
@@ -603,7 +629,7 @@
         </section>
 
         <section><a name="refs"></a>
-          <h2>References</h2>
+          <h2>References <a href="#top" style="float:right"><i class="fa fa-angle-double-up fa-fw"></i></a></h2>
           <div class="row">
             <div class="col-md-12">
               <a name="ref1">[1]</a> Y. Li, et al., "Measurement of Longitudinal Electron Diffusion in Liquid Argon", <a href="http://arxiv.org/abs/1508.07059">arXiv:1508.07059</a>.

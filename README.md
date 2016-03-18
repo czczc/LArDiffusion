@@ -18,6 +18,7 @@ This website is constructed using the [Twitter Bootstrap](http://getbootstrap.co
   - [Prepare data](#prepare-data)
   - [Convert to JSON format](#convert-to-json-format)
   - [Load into webpage](#load-into-webpage)
+- [Add Dynamic Contents](#add-dynamic-contents)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -128,7 +129,7 @@ First, add a place to host the plot in [index.html](index.html)
   <div id="myplot" class='plot'></div>
 </div>
 ```
-Make sure that the `id` attribute in `<div id="myplot" class='plot'></div>` is the same as the name of the `.json` file. The structure is set up such that this `<div>` tag to host the plot must be inside a `<div.list-group>` tag and preceded by a `<a>` tag. Multiple plots inside the list-group is allowed.
+Make sure that the `id` attribute in `<div id="myplot" class='plot'></div>` is the same as the name of the `.json` file. The structure is set up such that this `<div>` tag to host the plot must be inside a `<div.list-group>` tag and preceded by an `<a>` tag. Multiple plots inside the list-group are allowed.
 
 Then, add an entry to configure the properties of the plot, such as axis title, axis range, etc., to the `plot_dispatcher` object in the [js/plot-dispacher.js](js/plot-dispacher.js) file:
 ```javascript
@@ -138,10 +139,14 @@ var plot_dispatcher = {
   'myplot' : {
     xAxis: {title: {text: 'xxx'}, min: xxx, max: xxx},
     yAxis: {title: {text: 'xxx'}, min: xxx, max: xxx}
-    },
+  },
   
   ...
 }
 ```
 Please refer to the [Highcharts API](http://api.highcharts.com/highcharts) for the full configurable properties of the plots.
+
+## Add Dynamic Contents
+Dynamic contents (content changes with inputs) can be added as shown in [this example](http://lar.bnl.gov/properties/#e-trans).
+The dynamic contents are added using the [Vue.js](http://vuejs.org/) library. Please follow the (example)[js/app.js] to add your own `Vue` models.
 

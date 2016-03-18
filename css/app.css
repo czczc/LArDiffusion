@@ -2,7 +2,9 @@ body {
     margin-bottom: 20px;
     /*font-size: 16px;*/
 }
-
+h2 {
+    border-bottom: 1px solid #555;
+}
 i {
     margin-right: 10px;
 }
