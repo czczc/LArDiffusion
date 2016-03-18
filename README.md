@@ -148,5 +148,5 @@ Please refer to the [Highcharts API](http://api.highcharts.com/highcharts) for t
 
 ## Add Dynamic Contents
 Dynamic contents (content changes with inputs) can be added as shown in [this example](http://lar.bnl.gov/properties/#e-trans).
-The dynamic contents are added using the [Vue.js](http://vuejs.org/) library. Please follow the (example)[js/app.js] to add your own `Vue` models.
+The dynamic contents are added using the [Vue.js](http://vuejs.org/) framework. Please follow the [example](js/app.js) to add your own `Vue` models.
 
