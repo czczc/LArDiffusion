@@ -11,5 +11,8 @@ cd LArProperties
 python -m SimpleHTTPServer
 ```
 
-Now open a web browser and direct to [http://localhost:8000]
+Now open a web browser and go to <http://localhost:8000>
 
+## Add Static Contents
+
+The static contents can be directly added to the <index.html>
