@@ -2,6 +2,24 @@
 
 This website is constructed using the [Twitter Bootstrap](http://getbootstrap.com/) framework to make it [responsive](https://en.wikipedia.org/wiki/Responsive_web_design) across a wide range of devices. 
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Download and Set Up a Webserver](#download-and-set-up-a-webserver)
+- [Add Static Contents](#add-static-contents)
+  - [Table](#table)
+  - [Panel](#panel)
+  - [Panel Title](#panel-title)
+  - [Simple paragraph](#simple-paragraph)
+  - [Two-column text + image](#two-column-text--image)
+  - [Math formula](#math-formula)
+- [Add Interactive Plots](#add-interactive-plots)
+  - [Prepare data](#prepare-data)
+  - [Convert to JSON format](#convert-to-json-format)
+  - [Load into webpage](#load-into-webpage)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Download and Set Up a Webserver
 
@@ -15,7 +33,7 @@ Now open a web browser and go to <http://localhost:8000>
 
 ## Add Static Contents
 
-The static contents can be directly added to the [index.html](index.html) file inside the corresponding `<section></section>` tag. To make the format consist, please use the following guidelines:
+The static contents can be directly added to the [index.html](index.html) file inside the corresponding `<section></section>` tag. To make the format consistent, please use the following guidelines:
 
 ### Table
 ```html
@@ -48,7 +66,7 @@ The static contents can be directly added to the [index.html](index.html) file i
 </div>
 ```
 
-### Simple Paragraph
+### Simple paragraph
 ```html
 <div class="row">
   <div class="col-md-12">
@@ -68,3 +86,18 @@ The static contents can be directly added to the [index.html](index.html) file i
   </div>
 </div>
 ```
+
+### Math formula
+Latex math formula can be inserted into the html directly. It is then automatically rendered by [MathJax](https://www.mathjax.org/).
+- Inline: wrap latex formula in `$ ... $`
+- Block: wrap latex formula in `\[ ... \]`
+
+
+## Add Interactive Plots
+Interactive plots can be added as shown in [this example](http://lar.bnl.gov/properties/#particle-pass). The plots are rendered by the [Highchharts](http://lar.bnl.gov/properties/#particle-pass) library.
+
+### Prepare data
+
+### Convert to JSON format
+
+### Load into webpage
