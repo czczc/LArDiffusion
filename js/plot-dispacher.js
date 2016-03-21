@@ -6,5 +6,9 @@ var plot_dispatcher = {
     'dedx-residual-range': {
         xAxis: {title: {text: 'Residual Range [cm]'}, min: 0, max: 100},
         yAxis: {title: {text: 'dE/dx [Mev/cm]'}, min: 2, max: 10}
-    }
+    },
+    'rc-dedx': {
+        xAxis: {title: {text: 'dE/dx [Mev/cm]'}, min: 0.1, max: 30},
+        yAxis: {title: {text: '(dQ/dx) / (dE/dx)'}, min: 0.2, max: 0.9}
+    },
 }
