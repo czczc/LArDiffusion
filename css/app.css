@@ -1,6 +1,7 @@
 body {
     margin-bottom: 20px;
     /*font-size: 16px;*/
+    /*position: relative;*/
 }
 h2 {
     border-bottom: 1px solid #555;
@@ -8,6 +9,21 @@ h2 {
 i {
     margin-right: 10px;
 }
+@media screen and (max-width: 960px), (max-device-width: 960px){
+    .affix {
+        position: static;
+    }
+}
+/*@media screen and (min-width: 960px) {
+    .affix {
+        position: fixed;
+    }
+}
+@media screen and (max-device-width: 960px){
+    .affix {
+        position: static;
+    }
+}*/
 
 section {
     margin-bottom: 50px;
@@ -28,7 +44,9 @@ section {
 .plot {
     display: none;
 }
-
+li.active {
+    background-color: #D2E2E3;;
+}
 table caption {
     font-size: 1.5em;
     font-weight: bold;

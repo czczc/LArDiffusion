@@ -15,7 +15,7 @@
 </script>
 </head>
 
-<body><a name="top"></a>
+<body data-spy="scroll" data-target="#leftCol" data-offset="100"><a name="top"></a>
   <div class="container">
     <div class="page-header">
       <h1>
@@ -27,7 +27,7 @@
   <div id="app" class="container">
     <div class="row">
       <div class="col-md-3" id="leftCol">
-        <div class="well">
+        <div class="well affix" >
           <ul class="nav nav-stacked" id="sidebar">
             <li><a href="#basic-prop"><i class="fa fa-table fa-fw"></i> Basic Properties</a></li>
             <li><a href="#e-trans"><i class="fa fa-battery-full fa-fw"></i> Electron Transportation</a></li>
@@ -43,7 +43,7 @@
       </div>
 
       <div class="col-md-9">
-        <section><a name="basic-prop"></a>
+        <section id="basic-prop"><a name="basic-prop"></a>
           <h2>Basic Properties</h2>
           <p>
             <span class="label label-info">Info</span>
@@ -239,7 +239,7 @@
             </thead>
             <tbody>
               <tr>
-                <td>Delectric constant</td>
+                <td>Dielectric constant</td>
                 <td>$\epsilon$</td>
                 <td>1.505(3)</td>
                 <td>-</td>
@@ -345,35 +345,6 @@
             </tbody>
           </table>
 
-<!--           <table class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th>Property</th>
-                <th>Symbol</th>
-                <th>Value</th>
-                <th>Unit</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Automic Number</td>
-                <td>$Z$</td>
-                <td>18</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Automic Weight</td>
-                <td>$A$</td>
-                <td>39.948(1)</td>
-                <td>g/mol</td>
-              </tr>
-              <tr>
-                <td><a href="#Ar-comp">Isotopic composition</a></td>
-                  <td colspan="3">$^{36}$Ar (0.34%), $^{38}$Ar (0.06%), $^{40}$Ar (99.6%)</td>
-              </tr>
-            </tbody>
-          </table> -->
-
           <div class="panel panel-primary">
             <div class="panel-heading"><a name="phase-diagram"></a>
               <h3 class="panel-title">LAr Phase Diagram</h3>
@@ -394,7 +365,7 @@
           <hr>
         </section>
 
-        <section><a name="e-trans"></a>
+        <section id="e-trans"><a name="e-trans"></a>
           <h2>Electron Transportation <a href="#top" style="float:right"><i class="fa fa-angle-double-up fa-fw"></i></a></h2>
           <div class="row input">
             <div class="col-md-2 ">
@@ -544,19 +515,19 @@
           <hr>
         </section>
 
-        <section><a name="ion-trans"></a>
+        <section id="ion-trans"><a name="ion-trans"></a>
           <h2>Ion Transportation <a href="#top" style="float:right"><i class="fa fa-angle-double-up fa-fw"></i></a></h2>
           <div class="alert alert-info" role="alert">Editor: Michael Mooney</div>
           <hr>
         </section>
 
-        <section><a name="cold-elec"></a>
+        <section id="cold-elec"><a name="cold-elec"></a>
           <h2>Cold Electronics <a href="#top" style="float:right"><i class="fa fa-angle-double-up fa-fw"></i></a></h2>
           <div class="alert alert-info" role="alert">Editor: Brian Kirby, Jyoti Joshi</div>
           <hr>
         </section>
 
-        <section><a name="particle-pass"></a>
+        <section id="particle-pass"><a name="particle-pass"></a>
           <h2>Particle Passage through LAr <a href="#top" style="float:right"><i class="fa fa-angle-double-up fa-fw"></i></a></h2>
           <div class="panel panel-primary">
             <div class="panel-heading">Stopping power</div>
@@ -582,13 +553,13 @@
           <hr>
         </section>
 
-        <section><a name="scint"></a>
+        <section id="scint"><a name="scint"></a>
           <h2>Scintillation <a href="#top" style="float:right"><i class="fa fa-angle-double-up fa-fw"></i></a></h2>
           <div class="alert alert-info" role="alert">Editor: Yichen Li</div>
           <hr>
         </section>
 
-        <section><a name="recon"></a>
+        <section id="recon"><a name="recon"></a>
           <h2>LArTPC Reconstruction <a href="#top" style="float:right"><i class="fa fa-angle-double-up fa-fw"></i></a></h2>
           <div class="row">
             <div class="col-md-7">
@@ -607,7 +578,7 @@
           <hr>
         </section>
 
-        <section><a name="ev-disp"></a>
+        <section id="ev-disp"><a name="ev-disp"></a>
           <h2>Event Display <a href="#top" style="float:right"><i class="fa fa-angle-double-up fa-fw"></i></a></h2>
           <div class="row">
             <div class="col-md-6">
@@ -628,7 +599,7 @@
           <hr>
         </section>
 
-        <section><a name="refs"></a>
+        <section id="refs"><a name="refs"></a>
           <h2>References <a href="#top" style="float:right"><i class="fa fa-angle-double-up fa-fw"></i></a></h2>
           <div class="row">
             <div class="col-md-12">
@@ -643,8 +614,8 @@
   <!-- div.container ends   -->
   </div>
 
-  <!-- <script src="js/bootstrap.min.js"></script> -->
   <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
   <script src="js/highcharts/highcharts.js"></script>
   <script src="js/highcharts/modules/exporting.js"></script>
   <script src="js/vue.min.js"></script>
