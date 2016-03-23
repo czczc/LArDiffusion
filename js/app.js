@@ -1,6 +1,11 @@
 Vue.filter('trunc', function (value, precision) {
     if (precision==undefined) precision=4;
-    return value.toFixed(precision);
+    try {
+        return value.toFixed(precision);
+    }
+    catch (e) {
+        console.log(e);
+    }
 });
 
 var vm = new Vue({

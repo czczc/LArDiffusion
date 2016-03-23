@@ -9,6 +9,6 @@ var plot_dispatcher = {
     },
     'rc-dedx': {
         xAxis: {title: {text: 'dE/dx [Mev/cm]'}, min: 0.1, max: 30},
-        yAxis: {title: {text: '(dQ/dx) / (dE/dx)'}, min: 0.2, max: 0.9}
+        yAxis: {title: {text: '(dQ/dx) / (dE/dx) @ 500 V/cm'}, min: 0.2, max: 0.9}
     },
 }
